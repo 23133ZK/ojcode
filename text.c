@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include<math.h>
+#include<string.h>
+int main()
+{
+	long long x = 0, n = 0,sum=0,i=0,j=0;
+	scanf("%lld%lld", &x, &n);
+	if(7-x<=n)
+	{
+		for (i = x; i <= 5; i++)
+			sum += 250;
+
+		n = n - 7 + x-1;
+		sum += 250 * (n / 7) * 5;
+		j = n % 7;
+		
+		if (j < 5)
+			for (i = 1; i <= j; i++)
+				sum += 250;
+		else
+			sum += 250 * 5;
+		printf("%lld", sum);
+	}
+	else
+	{
+		if(n+x<=5)
+			for (i = 0; i < n; i++)
+				sum += 250;
+		else
+			for (i = x; i <= 5; i++)
+				sum += 250;
+		printf("%lld", sum);
+	}
+	return 0;
+}
