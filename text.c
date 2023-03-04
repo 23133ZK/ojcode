@@ -1,0 +1,55 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include<math.h>
+#include<string.h>
+int main()
+{
+	int a = 0, b = 0, c = 0,tem=0;
+	scanf("%d%d%d", &a, &b, &c);
+	if (a < b)
+	{
+		tem = a;
+		a = b;
+		b = tem;
+	}
+	if (a < c)
+	{
+		tem = a;
+		a = c;
+		c = tem;
+	}
+	if (b < c)
+	{
+		tem = b;
+		b = c;
+		c = tem;
+	}
+	
+	if (a + b > c && a + c > b && b + c > a)
+	{
+		if ( c * c + b * b == a * a )
+		{
+			printf("Right triangle\n");
+			if (a == b || b == c || a == c)
+				printf("Isosceles triangle\n");
+		}
+		else if ( c * c + b * b > a * a )
+		{
+			printf("Acute triangle\n");
+			if (a == b || b == c || a == c)
+				printf("Isosceles triangle\n");
+			
+			if (a == b&&a==c )
+			printf("Equilateral triangle\n");
+		}
+		else if ( c * c + b * b < a * a )
+		{
+			printf("Obtuse triangle\n");
+			if (a == b || b == c || a == c)
+				printf("Isosceles triangle\n");
+		}
+	}
+	else
+		printf("Not triangle\n");
+	return 0;
+}
